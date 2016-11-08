@@ -1,9 +1,9 @@
 <?php
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root.'/db/db_connect.php';
- 
+
 $error_msg = "";
- 
+
 if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
   // Sanitize and validate the data passed in
   $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
@@ -37,7 +37,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
   } else {
     $error_msg .= '<p class="error">Database error</p>';
   }
-  // TODO: 
+  // TODO:
   // We'll also have to account for the situation where the user doesn't have
   // rights to do registration, by checking what type of user is attempting to
   // perform the operation.
@@ -45,10 +45,10 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
     // Create a random salt
     $random_salt = hash('sha512', uniqid(openssl_random_pseudo_bytes(16), TRUE));
 
-    // Create salted password 
+    // Create salted password
     $password = hash('sha512', $password . $random_salt);
 
-    // Insert the new user into the database 
+    // Insert the new user into the database
     if ($insert_stmt = $mysqli->prepare("INSERT INTO members (username, email, password, salt) VALUES (?, ?, ?, ?)")) {
       $insert_stmt->bind_param('ssss', $username, $email, $password, $random_salt);
       // Execute the prepared query.

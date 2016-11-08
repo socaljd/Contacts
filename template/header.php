@@ -30,6 +30,7 @@ include_once $root.'/login/functions.php';
           </li> -->
           <li><a href="/contacts/contact.php">Add</a></li>
           <li><a href="/contacts/search_contacts.php">Browse</a></li>
+          <li><a href="/contacts/contact_groups.php">Groups</a></li>
         <?php else: ?>
           <li><a href="/login/login.php">Log In</a></li>
           <li><a href="/login/register.php">Register</a></li>

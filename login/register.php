@@ -1,5 +1,5 @@
 <?php
-exit;
+// exit;
 $root = $_SERVER['DOCUMENT_ROOT'];
 include_once $root.'/db/db_connect.php';
 include_once $root.'/login/functions.php';
@@ -18,10 +18,10 @@ include_once $root.'/login/register.inc.php';
   </head>
   <body>
     <?php require_once $root.'/template/header.php' ?>
-    <div class="container" style="width:25%">
+    <div class="container" style="width:25%;text-align:center">
+      <h2>Register</h2>
       <div id="alert"></div>
       <div class="jumbotron" align="center">
-        <h2>Register</h2><br />
         <form action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>" method="post" name="registration_form" class="form-signin" role="form">
           <input type="text" name="username" id="username" class="form-control" placeholder="Username" /><br />
           <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" /><br />

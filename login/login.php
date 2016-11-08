@@ -16,7 +16,8 @@ include_once $root.'db/db_connect.php';
   </head>
   <body>
     <?php require_once $root.'/template/header.php' ?>
-    <div class="container" style="width:25%">
+    <div class="container" style="width:25%;text-align:center">
+      <h2>Log In</h2>
     <?php if($_REQUEST['error'] == 1): ?>
       <div id="alert" class="alert alert-danger" align="center">Please log in.</div>
     <?php else: ?>
@@ -26,7 +27,6 @@ include_once $root.'db/db_connect.php';
       <?php if(login_check($mysqli) == true): ?>
         <h1>Welcome <?php echo htmlentities($_SESSION['username']) ?>!</h1>
       <?php else: ?>
-        <h2>Log In</h2><br />
         <form action="process_login.php" method="post" name="login_form" class="form-signin" role="form">
           <input type="text" name="username" id="username" class="form-control" placeholder="Username" /><br />
           <input type="password" name="password" id="password" class="form-control" placeholder="Password" onkeypress="return checkSubmit(event)" /><br />
@@ -39,9 +39,9 @@ include_once $root.'db/db_connect.php';
 </html>
 
 <script type="text/javascript">
-  function checkSubmit(e) {
-    if(e && e.keyCode == 13) {
-      formhash(document.forms[0], document.forms[0].password);
-    }
+function checkSubmit(e) {
+  if(e && e.keyCode == 13) {
+    formhash(document.forms[0], document.forms[0].password);
   }
+}
 </script>

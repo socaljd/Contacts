@@ -1,0 +1,1 @@
+[07-Dec-2014 08:21:26 UTC] PHP Fatal error:  Call to a member function query() on a non-object in /home/jamesg/public_html/theshamelesseater.org/contacts/contacts_ajax.php on line 102

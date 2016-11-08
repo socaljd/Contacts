@@ -1,0 +1,2 @@
+[30-Nov-2014 07:57:06 UTC] PHP Fatal error:  Call to undefined function sec_session_start() in /home/jamesg/public_html/theshamelesseater.org/index.php on line 6
+[30-Nov-2014 07:57:06 UTC] PHP Fatal error:  Call to undefined function sec_session_start() in /home/jamesg/public_html/theshamelesseater.org/index.php on line 6

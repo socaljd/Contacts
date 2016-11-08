@@ -26,7 +26,7 @@ sec_session_start();
         <h1>Welcome <?php echo ucfirst(htmlentities($_SESSION['username'])) ?>!</h1>
       <?php else: ?>
         <h2>Welcome</h2><br />
-        <h5>Subtitle</h5>
+        <h5></h5>
       <?php endif ?>
       </div>
     </div>
